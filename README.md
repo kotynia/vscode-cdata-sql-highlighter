@@ -8,15 +8,13 @@ This extension provides syntax highlighting for SQL code embedded within CDATA t
 - Dedicated highlighting for SQL keywords, functions, and operators.
 - Improved readability and code navigation for SQL code within CDATA tags.
 
-## Publish
+## Screenshots
 
-Use git bash to publish the extension.
+before:
 
-```bash
-npm install -g vsce
+![before](images/before.png)
 
-vsce package
+after:
 
-```
+![after](images/after.png)
 
-Upload the generated .vsix file to the marketplace. https://marketplace.visualstudio.com/manage/publishers
