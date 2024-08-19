@@ -1,0 +1,48 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "cdata-sql",
+    "patterns": [
+      {
+        "begin": "(<!\\[CDATA\\[)",
+        "beginCaptures": {
+          "0": { "name": "punctuation.definition.comment.xml" }
+        },
+        "end": "(\\]\\]>)",
+        "endCaptures": {
+          "0": { "name": "punctuation.definition.comment.xml" }
+        },
+        "patterns": [
+          {
+            "include": "#sqlInsideCDATA"
+          }
+        ]
+      },
+      {
+        "include": "#xmlOutsideCDATA"
+      }
+    ],
+    "repository": {
+      "sqlInsideCDATA": {
+        "begin": "(?<=<!\\[CDATA\\[)[^\\]]*\\n?",
+        "beginCaptures": {
+          "0": { "name": "source.sql.embedded.xml" }
+        },
+        "end": "(?=\\]\\]>)",
+        "patterns": [
+          {
+            "include": "source.sql"
+          }
+        ]
+      },
+      "xmlOutsideCDATA": {
+        "begin": "(?<=^|>)(?!(<!\\[CDATA\\[))",
+        "end": "(?=(<!\\[CDATA\\[|]]>))",
+        "patterns": [
+          {
+            "include": "text.html.basic"
+          }
+        ]
+      }
+    },
+    "scopeName": "source.xml"
+  }
