@@ -3,7 +3,7 @@
   "displayName": "CDATA SQL Highlighter",
   "description": "Syntax Highlighting for embedded SQL inside CDATA tags. ",
   "version": "0.0.1",
-  "publisher": "Marcin Kotynia",
+  "publisher": "MarcinKotynia",
   "icon": "images/icon.png",
   "engines": {
     "vscode": "^1.81.0"
